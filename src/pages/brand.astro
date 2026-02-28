@@ -1,0 +1,112 @@
+---
+import Base from "../layouts/Base.astro";
+
+const colors = [
+  { name: "Ink", hex: "#1a1a2e", textClass: "text-cream" },
+  { name: "Charcoal", hex: "#2d2d3f", textClass: "text-cream" },
+  { name: "Gold", hex: "#c9a84c", textClass: "text-ink" },
+  { name: "Gold Light", hex: "#dfc06e", textClass: "text-ink" },
+  { name: "Cream", hex: "#faf8f4", textClass: "text-ink" },
+  { name: "Stone", hex: "#f0ece4", textClass: "text-ink" },
+  { name: "Muted", hex: "#8a8a9a", textClass: "text-ink" },
+  { name: "Body", hex: "#4a4a5a", textClass: "text-cream" },
+];
+---
+
+<Base title="Brand Guidelines | Rosemary Berkon">
+  <div class="page-header">
+    <h1 class="font-heading text-4xl md:text-5xl font-bold text-cream">Brand Guidelines</h1>
+    <p class="text-cream/60 mt-3">Logo usage, colour palette, and typography</p>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-6 py-16 space-y-24">
+
+    <!-- Logo Marks -->
+    <section>
+      <h2 class="font-heading text-2xl font-bold text-ink mb-2">Logo — Monogram Mark</h2>
+      <p class="text-body/70 mb-10">The monogram mark is used as an icon or avatar. Use the dark variant on light backgrounds and the standard variant on dark backgrounds.</p>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-ink rounded-lg p-12 flex flex-col items-center gap-6">
+          <img src="/images/logo-mark.svg" alt="Monogram mark on dark" class="w-44 h-44" />
+          <span class="text-muted text-xs uppercase tracking-[0.15em]">On dark backgrounds</span>
+        </div>
+        <div class="bg-cream border border-stone rounded-lg p-12 flex flex-col items-center gap-6">
+          <img src="/images/logo-mark-light.svg" alt="Monogram mark on light" class="w-44 h-44" />
+          <span class="text-body/50 text-xs uppercase tracking-[0.15em]">On light backgrounds</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wordmarks -->
+    <section>
+      <h2 class="font-heading text-2xl font-bold text-ink mb-2">Logo — Wordmark</h2>
+      <p class="text-body/70 mb-10">The full wordmark is used where space allows. The light variant uses ink-coloured text for legibility on light backgrounds.</p>
+
+      <div class="space-y-8">
+        <div class="bg-ink rounded-lg p-12 flex flex-col items-center gap-6">
+          <img src="/images/logo-wordmark.svg" alt="Wordmark on dark" class="w-full max-w-lg" />
+          <span class="text-muted text-xs uppercase tracking-[0.15em]">On dark backgrounds</span>
+        </div>
+        <div class="bg-cream border border-stone rounded-lg p-12 flex flex-col items-center gap-6">
+          <img src="/images/logo-wordmark-light.svg" alt="Wordmark on light" class="w-full max-w-md" />
+          <span class="text-body/50 text-xs uppercase tracking-[0.15em]">On light backgrounds</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nav Wordmark -->
+    <section>
+      <h2 class="font-heading text-2xl font-bold text-ink mb-2">Logo — Navigation</h2>
+      <p class="text-body/70 mb-10">A compact wordmark without tagline, used in the site navigation.</p>
+
+      <div class="bg-ink rounded-lg p-8 flex flex-col items-center gap-6">
+        <img src="/images/logo-wordmark-nav.svg" alt="Nav wordmark" class="h-6" />
+        <span class="text-muted text-xs uppercase tracking-[0.15em]">Navigation bar</span>
+      </div>
+    </section>
+
+    <!-- Colour Palette -->
+    <section>
+      <h2 class="font-heading text-2xl font-bold text-ink mb-2">Colour Palette</h2>
+      <p class="text-body/70 mb-10">The brand palette centres on deep ink and warm gold, with cream and stone for lighter sections.</p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {colors.map(({ name, hex, textClass }) => (
+          <div class="rounded-lg overflow-hidden border border-stone">
+            <div class={`h-24 flex items-end p-3 ${textClass}`} style={`background-color: ${hex}`}>
+              <span class="text-xs font-medium opacity-80">{name}</span>
+            </div>
+            <div class="bg-white px-3 py-2">
+              <span class="text-xs font-mono text-body/70">{hex}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Typography -->
+    <section>
+      <h2 class="font-heading text-2xl font-bold text-ink mb-2">Typography</h2>
+      <p class="text-body/70 mb-10">Two typefaces are used throughout: an editorial serif for headings and a clean sans-serif for body text.</p>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="border border-stone rounded-lg p-8">
+          <span class="text-xs text-gold uppercase tracking-[0.15em] mb-4 block">Headings</span>
+          <p class="font-heading text-4xl font-bold text-ink mb-3">Cormorant Garamond</p>
+          <p class="font-heading text-xl text-body/70">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+          <p class="font-heading text-xl text-body/70">abcdefghijklmnopqrstuvwxyz</p>
+          <p class="font-heading text-lg text-body/50 mt-2">Weights: 400, 600, 700</p>
+        </div>
+        <div class="border border-stone rounded-lg p-8">
+          <span class="text-xs text-gold uppercase tracking-[0.15em] mb-4 block">Body</span>
+          <p class="font-body text-4xl font-medium text-ink mb-3">DM Sans</p>
+          <p class="font-body text-xl text-body/70">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+          <p class="font-body text-xl text-body/70">abcdefghijklmnopqrstuvwxyz</p>
+          <p class="font-body text-lg text-body/50 mt-2">Weights: 300, 400, 500, 600</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Base>

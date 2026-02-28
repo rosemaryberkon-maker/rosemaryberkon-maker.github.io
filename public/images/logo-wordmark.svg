@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 80">
+  <!-- Name -->
+  <text x="250" y="28" text-anchor="middle" dominant-baseline="central" font-family="'Cormorant Garamond', Georgia, serif" font-size="30" font-weight="600" letter-spacing="6" fill="#c9a84c">ROSEMARY BERKON</text>
+  <!-- Decorative divider between name and tagline -->
+  <line x1="150" y1="49" x2="232" y2="49" stroke="#c9a84c" stroke-width="0.75" opacity="0.4"/>
+  <rect x="237" y="46" width="5" height="5" rx="0.5" transform="rotate(45 239.5 48.5)" fill="#c9a84c" opacity="0.6"/>
+  <rect x="258" y="46" width="5" height="5" rx="0.5" transform="rotate(45 260.5 48.5)" fill="#c9a84c" opacity="0.6"/>
+  <line x1="268" y1="49" x2="350" y2="49" stroke="#c9a84c" stroke-width="0.75" opacity="0.4"/>
+  <!-- Tagline -->
+  <text x="250" y="62" text-anchor="middle" dominant-baseline="central" font-family="'DM Sans', system-ui, sans-serif" font-size="9" letter-spacing="5" fill="#c9a84c" opacity="0.5">VOICE, ACCENT &amp; DIALECT COACH</text>
+</svg>
