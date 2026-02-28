@@ -1,5 +1,53 @@
 ---
 import Base from "../layouts/Base.astro";
+
+const testimonials = [
+  {
+    quote: "I love working with Rosemary, she provides a safe space to allow us to explore the accent together in a physical and playful way, checking in regularly to see what I have discovered. I trust her with my voice work.",
+    name: "Alanah Bloor",
+    credit: "Sandokan (Netflix, Disney+)",
+  },
+  {
+    quote: "Rosemary tailors everything to the student and guides the lessons with grace and fun. I noticed improvements in a very short time while working with Rosemary and I look forward to working with her more.",
+    name: "Zijuan Elsol",
+    credit: "Harry Potter and the Cursed Child",
+  },
+  {
+    quote: "From the first lesson with Rosemary I felt so comfortable with her! She was very encouraging and attentive to what I wanted to achieve from the lessons. Throughout the lessons she taught me a variety of different exercises, techniques and advice that helped me achieve my goal of acing the American accent. Not only did Rosemary teach me how to speak in the American accent she also helped me feel confident with my voice.",
+    name: "Anais Jessica Berinde",
+    credit: "Young Artist Academy Awards",
+  },
+  {
+    quote: "I\u2019m performing at the Globe in April with the Globe Youth Theatre, which I\u2019m buzzing for. I can\u2019t thank you enough for the amazing voice lessons from last year. They\u2019ve served me very well.",
+    name: "Megg Webber",
+    credit: "Rose Bruford Student",
+  },
+  {
+    quote: "I\u2019ve had a few weeks of lessons now with Rosemary. She is always super prepared, engaged, and friendly. Each lesson she has thought carefully about what we could work on. I\u2019ve learnt so much already and can feel improvements each week. Thank you!",
+    name: "Rosalind",
+    credit: "via Superprof",
+  },
+  {
+    quote: "Our son immensely benefitted from the Voice coaching sessions. The energy you bring into the lessons seems to have rubbed off & he has become more confident & articulate! Thank you for the dedication.",
+    name: "Lini Jacob",
+    credit: "Parent",
+  },
+  {
+    quote: "Rosemary\u2019s coaching is incredible, the advice she gives is very clear and specific to what you need. She works your voice and finds a way to adapt it to the accent that is easy to understand and accessible. I would absolutely recommend working with Rosemary and I will continue to do so in the future.",
+    name: "Neil Ashton",
+    credit: "Brassic, It\u2019s a Sin",
+  },
+  {
+    quote: "After a year of classes with Rosemary, I can say that I feel much more comfortable not only with my voice, but also with my acting choices and interpretation of text. Having her as a coach has been great\u2014she makes me feel very safe in the space while always pushing me, in a positive way, to go further. I think she has a deep understanding of the craft, and as a student, I truly trust and believe in her insights and advice.",
+    name: "Aldo Peirano",
+    credit: "LIPA Graduate",
+  },
+  {
+    quote: "I have worked with a lot of different accent/dialect coaches over the years, but Rosemary has by far been the coach who has ushered in results and made me feel the most confident about the progress I have made with my accent. Our sessions were always a delight and I found all of the exercises and warm-ups extremely helpful and effective! I would highly recommend Rosemary.",
+    name: "Jennifer James",
+    credit: "Sunflower Child",
+  },
+];
 ---
 
 <Base title="Rosemary Berkon | Voice, Accent and Dialect Coach">
@@ -72,8 +120,8 @@ import Base from "../layouts/Base.astro";
     </div>
   </section>
 
-  <!-- Testimonial -->
-  <section class="relative">
+  <!-- Testimonials -->
+  <section class="relative" id="testimonial-carousel">
     <div
       class="absolute inset-0 bg-cover bg-center"
       style="background-image: url('/images/marquee-lights.jpg')"
@@ -81,14 +129,136 @@ import Base from "../layouts/Base.astro";
     <div class="absolute inset-0 bg-black/60"></div>
     <div class="relative max-w-3xl mx-auto px-6 py-16 md:py-20 text-center">
       <p class="text-white/90 text-sm uppercase tracking-widest mb-6">What Clients Say</p>
-      <blockquote class="font-heading text-xl md:text-2xl italic text-white leading-relaxed">
-        &ldquo;I love working with Rosemary, she provides a safe space to allow us to explore the accent together in a physical and playful way, checking in regularly to see what I have discovered. I trust her with my voice work.&rdquo;
-      </blockquote>
-      <p class="text-white/70 mt-6 text-sm">
-        Alanah Bloor &mdash; <em>Sandokan</em> (Netflix, Disney+)
-      </p>
+      <div class="flex items-center gap-4">
+        <button class="testimonial-prev shrink-0 text-white/60 hover:text-white transition-colors" aria-label="Previous testimonial">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+        </button>
+        <div class="relative flex-1" id="slides-container">
+          {testimonials.map((t, i) => (
+            <div
+              class:list={[
+                "testimonial-slide absolute inset-0 flex flex-col justify-center transition-opacity duration-700 ease-in-out",
+                i === 0 ? "opacity-100" : "opacity-0 pointer-events-none",
+              ]}
+              data-index={i}
+            >
+              <blockquote class="font-heading text-xl md:text-2xl italic text-white leading-relaxed">
+                &ldquo;{t.quote}&rdquo;
+              </blockquote>
+              <p class="text-white/70 mt-6 text-sm">
+                {t.name} &mdash; <em>{t.credit}</em>
+              </p>
+            </div>
+          ))}
+        </div>
+        <button class="testimonial-next shrink-0 text-white/60 hover:text-white transition-colors" aria-label="Next testimonial">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+        </button>
+      </div>
+      <div class="flex justify-center gap-2 mt-8" role="tablist" aria-label="Testimonial navigation">
+        {testimonials.map((_, i) => (
+          <button
+            class:list={[
+              "testimonial-dot w-2.5 h-2.5 rounded-full transition-colors duration-300",
+              i === 0 ? "bg-white" : "bg-white/40",
+            ]}
+            data-index={i}
+            role="tab"
+            aria-selected={i === 0 ? "true" : "false"}
+            aria-label={`Testimonial ${i + 1}`}
+          />
+        ))}
+      </div>
     </div>
   </section>
+
+  <script>
+    const carousel = document.getElementById("testimonial-carousel");
+    const slides = carousel.querySelectorAll(".testimonial-slide");
+    const dots = carousel.querySelectorAll(".testimonial-dot");
+    const prevBtn = carousel.querySelector(".testimonial-prev");
+    const nextBtn = carousel.querySelector(".testimonial-next");
+    const count = slides.length;
+    let current = 0;
+    let interval;
+    let touchStartX = 0;
+
+    const container = document.getElementById("slides-container");
+
+    function setContainerHeight() {
+      let maxH = 0;
+      slides.forEach((s) => {
+        s.style.position = "static";
+        s.style.visibility = "hidden";
+        maxH = Math.max(maxH, s.offsetHeight);
+        s.style.position = "";
+        s.style.visibility = "";
+      });
+      container.style.height = maxH + "px";
+    }
+
+    setContainerHeight();
+    window.addEventListener("resize", setContainerHeight);
+
+    function goTo(index) {
+      const prev = current;
+      current = ((index % count) + count) % count;
+      if (prev === current) return;
+
+      slides[prev].classList.add("opacity-0", "pointer-events-none");
+      slides[prev].classList.remove("opacity-100");
+      dots[prev].classList.replace("bg-white", "bg-white/40");
+      dots[prev].setAttribute("aria-selected", "false");
+
+      slides[current].classList.remove("opacity-0", "pointer-events-none");
+      slides[current].classList.add("opacity-100");
+      dots[current].classList.replace("bg-white/40", "bg-white");
+      dots[current].setAttribute("aria-selected", "true");
+    }
+
+    function startAutoAdvance() {
+      interval = setInterval(() => goTo(current + 1), 6000);
+    }
+
+    function stopAutoAdvance() {
+      clearInterval(interval);
+    }
+
+    function navClick(offset) {
+      stopAutoAdvance();
+      goTo(current + offset);
+      startAutoAdvance();
+    }
+
+    prevBtn.addEventListener("click", () => navClick(-1));
+    nextBtn.addEventListener("click", () => navClick(1));
+
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        stopAutoAdvance();
+        goTo(Number(dot.dataset.index));
+        startAutoAdvance();
+      });
+    });
+
+    carousel.addEventListener("mouseenter", stopAutoAdvance);
+    carousel.addEventListener("mouseleave", startAutoAdvance);
+
+    carousel.addEventListener("touchstart", (e) => {
+      touchStartX = e.touches[0].clientX;
+      stopAutoAdvance();
+    }, { passive: true });
+
+    carousel.addEventListener("touchend", (e) => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        goTo(current + (diff > 0 ? 1 : -1));
+      }
+      startAutoAdvance();
+    }, { passive: true });
+
+    startAutoAdvance();
+  </script>
 
   <!-- Contact -->
   <section class="max-w-3xl mx-auto px-6 py-16 md:py-20 text-center">
