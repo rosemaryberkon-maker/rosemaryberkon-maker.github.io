@@ -6,34 +6,37 @@ const socialLinks = [
 ];
 ---
 
-<footer class="bg-teal-dark text-white">
+<footer class="bg-ink text-cream/80">
+  <svg class="section-divider" viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0 48h1440V0C1200 32 960 48 720 48S240 32 0 0v48z" fill="#1a1a2e"/>
+  </svg>
   <div class="max-w-5xl mx-auto px-6 py-12">
     <div class="grid md:grid-cols-3 gap-8">
       <div>
-        <h3 class="font-heading text-lg mb-3">Get in Touch</h3>
-        <p class="text-white/80 text-sm leading-relaxed">
-          <a href="mailto:rosemary.berkon@gmail.com" class="hover:text-white transition-colors">
+        <h3 class="font-heading text-lg text-gold mb-3">Get in Touch</h3>
+        <p class="text-cream/70 text-sm leading-relaxed">
+          <a href="mailto:rosemary.berkon@gmail.com" class="hover:text-gold-light transition-colors">
             rosemary.berkon@gmail.com
           </a>
         </p>
-        <p class="text-white/60 text-sm mt-1">Liverpool, UK</p>
+        <p class="text-cream/50 text-sm mt-1">Liverpool, UK</p>
       </div>
 
       <div>
-        <h3 class="font-heading text-lg mb-3">Quick Links</h3>
-        <ul class="space-y-2 text-sm text-white/80">
-          <li><a href="/accent-training/" class="hover:text-white transition-colors">Accent Training</a></li>
-          <li><a href="/about/" class="hover:text-white transition-colors">About Me</a></li>
-          <li><a href="/news/" class="hover:text-white transition-colors">News</a></li>
-          <li><a href="/terms/" class="hover:text-white transition-colors">Terms & Conditions</a></li>
-          <li><a href="/privacy/" class="hover:text-white transition-colors">Privacy Policy</a></li>
-          <li><a href="/refunds/" class="hover:text-white transition-colors">Refunds &amp; Cancellations</a></li>
-          <li><a href="/disclaimer/" class="hover:text-white transition-colors">Coaching Disclaimer</a></li>
+        <h3 class="font-heading text-lg text-gold mb-3">Quick Links</h3>
+        <ul class="space-y-2 text-sm text-cream/70">
+          <li><a href="/accent-training/" class="hover:text-gold-light transition-colors">Accent Training</a></li>
+          <li><a href="/about/" class="hover:text-gold-light transition-colors">About Me</a></li>
+          <li><a href="/news/" class="hover:text-gold-light transition-colors">News</a></li>
+          <li><a href="/terms/" class="hover:text-gold-light transition-colors">Terms & Conditions</a></li>
+          <li><a href="/privacy/" class="hover:text-gold-light transition-colors">Privacy Policy</a></li>
+          <li><a href="/refunds/" class="hover:text-gold-light transition-colors">Refunds &amp; Cancellations</a></li>
+          <li><a href="/disclaimer/" class="hover:text-gold-light transition-colors">Coaching Disclaimer</a></li>
         </ul>
       </div>
 
       <div>
-        <h3 class="font-heading text-lg mb-3">Follow</h3>
+        <h3 class="font-heading text-lg text-gold mb-3">Follow</h3>
         <div class="flex gap-4">
           {socialLinks.map(({ href, label, icon }) => (
             <a
@@ -41,7 +44,7 @@ const socialLinks = [
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              class="text-white/70 hover:text-white transition-colors"
+              class="text-cream/50 hover:text-gold-light transition-colors"
             >
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d={icon} />
@@ -52,7 +55,7 @@ const socialLinks = [
       </div>
     </div>
 
-    <div class="mt-10 pt-6 border-t border-white/20 text-center text-xs text-white/50">
+    <div class="mt-10 pt-6 border-t border-cream/10 text-center text-xs text-cream/40">
       &copy; {new Date().getFullYear()} Rosemary Berkon &mdash; Voice, Accent and Dialect Coach
     </div>
   </div>

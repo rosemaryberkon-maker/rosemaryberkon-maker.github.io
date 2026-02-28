@@ -1,11 +1,82 @@
 @import "tailwindcss";
 
 @theme {
-  --color-teal: #218376;
-  --color-teal-dark: #165950;
-  --color-teal-light: #2a9d8f;
-  --color-warm-white: #fafaf8;
-  --color-warm-gray: #f5f5f3;
-  --font-heading: "Playfair Display", Georgia, serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --color-ink:        #1a1a2e;
+  --color-charcoal:   #2d2d3f;
+  --color-cream:      #faf8f4;
+  --color-stone:      #f0ece4;
+  --color-gold:       #c9a84c;
+  --color-gold-light: #dfc06e;
+  --color-muted:      #8a8a9a;
+  --color-body:       #4a4a5a;
+  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: rgba(201, 168, 76, 0.3);
+  color: #1a1a2e;
+}
+
+:focus-visible {
+  outline: 2px solid #c9a84c;
+  outline-offset: 2px;
+}
+
+.animate-ready [data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.animate-ready [data-animate="fade-in"] {
+  transform: none;
+}
+
+.animate-ready [data-animate="scale-in"] {
+  transform: scale(0.95);
+}
+
+.animate-ready [data-animate].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.section-divider {
+  display: block;
+  width: 100%;
+  height: auto;
+  line-height: 0;
+}
+
+.page-header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d3f 100%);
+  padding: 4rem 1.5rem 3rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  color: #faf8f4;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.page-header p {
+  color: #c9a84c;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .page-header {
+    padding: 5rem 1.5rem 3.5rem;
+  }
+  .page-header h1 {
+    font-size: 3rem;
+  }
 }

@@ -52,85 +52,96 @@ const testimonials = [
 
 <Base title="Rosemary Berkon | Voice, Accent and Dialect Coach">
   <!-- Hero -->
-  <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-teal-dark via-teal to-teal-light opacity-90"></div>
-    <div class="relative max-w-5xl mx-auto px-6 py-20 md:py-28 flex flex-col md:flex-row items-center gap-10">
-      <div class="md:w-1/2 text-center md:text-left">
-        <h1 class="font-heading text-4xl md:text-5xl font-bold text-white leading-tight">
+  <section class="relative overflow-hidden min-h-[100vh] flex items-center">
+    <div class="absolute inset-0 bg-gradient-to-br from-ink via-ink to-charcoal"></div>
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, rgba(201,168,76,0.5) 1px, transparent 0); background-size: 40px 40px;"></div>
+    <div class="relative max-w-5xl mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center gap-12 w-full">
+      <div class="md:w-1/2 text-center md:text-left" data-animate="fade-up">
+        <p class="text-gold text-sm uppercase tracking-[0.2em] mb-4">Voice, Accent &amp; Dialect Coach</p>
+        <h1 class="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-cream leading-[1.1]">
           Rosemary Berkon
         </h1>
-        <p class="text-white/90 text-lg mt-3 tracking-wide">
-          Voice, Accent and Dialect Coach
-        </p>
-        <p class="text-white/80 mt-6 leading-relaxed">
+        <p class="text-cream/70 mt-6 leading-relaxed max-w-md mx-auto md:mx-0">
           Masters-trained Voice Coach with fifteen years' experience in the professional theatre industry. Trained at The Royal Central School of Speech and Drama.
         </p>
-        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
           <a
             href="/accent-training/"
-            class="inline-block bg-white text-teal-dark font-medium px-6 py-3 text-sm tracking-wide hover:bg-white/90 transition-colors"
+            class="inline-block bg-gold text-ink font-medium px-8 py-3.5 text-sm tracking-wide hover:bg-gold-light transition-colors"
           >
             Accent Training Programme
           </a>
           <a
             href="mailto:rosemary.berkon@gmail.com"
-            class="inline-block border border-white/60 text-white px-6 py-3 text-sm tracking-wide hover:bg-white/10 transition-colors"
+            class="inline-block border border-cream/30 text-cream px-8 py-3.5 text-sm tracking-wide hover:border-gold hover:text-gold transition-colors"
           >
             Get in Touch
           </a>
         </div>
       </div>
-      <div class="md:w-1/2 flex justify-center">
-        <img
-          src="/images/rosemary-hero.jpg"
-          alt="Rosemary Berkon"
-          class="w-72 md:w-80 rounded shadow-2xl"
-        />
+      <div class="md:w-1/2 flex justify-center" data-animate="fade-in" data-delay="200">
+        <div class="relative">
+          <div class="absolute -inset-6 border border-gold/20 rounded-full"></div>
+          <div class="absolute -inset-12 border border-gold/10 rounded-full"></div>
+          <img
+            src="/images/rosemary-hero.jpg"
+            alt="Rosemary Berkon"
+            class="w-72 md:w-80 rounded shadow-2xl relative z-10"
+          />
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Wave divider -->
+  <svg class="section-divider -mt-1" viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0 0v48h1440V0c-240 32-480 48-720 48S240 32 0 0z" fill="#faf8f4"/>
+  </svg>
+
   <!-- Voice Coaching -->
-  <section class="max-w-3xl mx-auto px-6 py-16 md:py-20">
-    <h2 class="font-heading text-3xl font-bold text-center mb-8">Voice Coaching</h2>
-    <div class="space-y-5 text-gray-700 leading-relaxed">
-      <p>
-        Rosemary is a Masters-trained Voice, Accent and Dialect Coach with fifteen years' experience working in the professional theatre industry. She trained as a Voice Coach at The Royal Central School of Speech and Drama and as an Actor at ALRA.
-      </p>
-      <p>
-        She has coached West End actors, rising star screen actors and holds associations with prestigious drama schools. She holds fellowship from the Higher Education Academy and a PGCERT in Teaching and Learning in the Performing Arts from Rose Bruford College of Speech and Drama. She has been presented with awards for excellence both as an actor and a teacher.
-      </p>
-      <p>
-        Rosemary is based in the North West of the U.K but her work has international reach, coaching at the Festivalul International de Teatru de la Sibiu in Romania and undertaking training at The Centre Artistique International Roy Hart in Malerargues, France.
-      </p>
-      <p>
-        She is an expert in teaching the Standard Accents to Actors &mdash; 'Received Pronunciation' and 'General American' &mdash; and continues to research accessible avenues for teaching these, presenting her research for the Voice and Speech Trainers Association.
-      </p>
-      <p>
-        Rosemary's mission is to help people come home to their voice while also opening up new possibilities for expression. She is passionate about speech and communication, believing that everyone deserves to be heard.
-      </p>
-    </div>
-    <div class="mt-10 text-center">
-      <a
-        href="/accent-training/"
-        class="inline-block bg-teal text-white font-medium px-8 py-3 text-sm tracking-wide hover:bg-teal-dark transition-colors"
-      >
-        Accent Training Programme
-      </a>
+  <section class="bg-cream">
+    <div class="max-w-3xl mx-auto px-6 py-16 md:py-20">
+      <div class="flex items-start gap-5" data-animate="fade-up">
+        <div class="hidden md:block w-1 bg-gold/40 rounded-full self-stretch shrink-0"></div>
+        <div>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-ink mb-8">Voice Coaching</h2>
+          <div class="space-y-5 text-body leading-relaxed">
+            <p data-animate="fade-up" data-delay="100">
+              Rosemary is a Masters-trained Voice, Accent and Dialect Coach with fifteen years' experience working in the professional theatre industry. She trained as a Voice Coach at The Royal Central School of Speech and Drama and as an Actor at ALRA.
+            </p>
+            <p data-animate="fade-up" data-delay="200">
+              She has coached West End actors, rising star screen actors and holds associations with prestigious drama schools. She holds fellowship from the Higher Education Academy and a PGCERT in Teaching and Learning in the Performing Arts from Rose Bruford College of Speech and Drama. She has been presented with awards for excellence both as an actor and a teacher.
+            </p>
+            <p data-animate="fade-up" data-delay="300">
+              Rosemary is based in the North West of the U.K but her work has international reach, coaching at the Festivalul International de Teatru de la Sibiu in Romania and undertaking training at The Centre Artistique International Roy Hart in Malerargues, France.
+            </p>
+            <p data-animate="fade-up" data-delay="400">
+              She is an expert in teaching the Standard Accents to Actors &mdash; 'Received Pronunciation' and 'General American' &mdash; and continues to research accessible avenues for teaching these, presenting her research for the Voice and Speech Trainers Association.
+            </p>
+            <p data-animate="fade-up" data-delay="500">
+              Rosemary's mission is to help people come home to their voice while also opening up new possibilities for expression. She is passionate about speech and communication, believing that everyone deserves to be heard.
+            </p>
+          </div>
+          <div class="mt-10">
+            <a
+              href="/accent-training/"
+              class="inline-block bg-gold text-ink font-medium px-8 py-3 text-sm tracking-wide hover:bg-gold-light transition-colors"
+            >
+              Accent Training Programme
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Testimonials -->
   <section class="relative" id="testimonial-carousel">
-    <div
-      class="absolute inset-0 bg-cover bg-center"
-      style="background-image: url('/images/marquee-lights.jpg')"
-    ></div>
-    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-ink via-ink to-charcoal"></div>
     <div class="relative max-w-3xl mx-auto px-6 py-16 md:py-20 text-center">
-      <p class="text-white/90 text-sm uppercase tracking-widest mb-6">What Clients Say</p>
+      <p class="text-gold text-sm uppercase tracking-[0.2em] mb-8">What Clients Say</p>
       <div class="flex items-center gap-4">
-        <button class="testimonial-prev shrink-0 text-white/60 hover:text-white transition-colors" aria-label="Previous testimonial">
+        <button class="testimonial-prev shrink-0 text-cream/40 hover:text-gold transition-colors" aria-label="Previous testimonial">
           <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
         </button>
         <div class="relative flex-1" id="slides-container">
@@ -142,16 +153,17 @@ const testimonials = [
               ]}
               data-index={i}
             >
-              <blockquote class="font-heading text-xl md:text-2xl italic text-white leading-relaxed">
-                &ldquo;{t.quote}&rdquo;
+              <span class="font-heading text-6xl text-gold/30 leading-none mb-2">&ldquo;</span>
+              <blockquote class="font-heading text-xl md:text-2xl italic text-cream leading-relaxed -mt-8">
+                {t.quote}
               </blockquote>
-              <p class="text-white/70 mt-6 text-sm">
-                {t.name} &mdash; <em>{t.credit}</em>
+              <p class="text-cream/60 mt-6 text-sm">
+                {t.name} &mdash; <em class="text-gold/70">{t.credit}</em>
               </p>
             </div>
           ))}
         </div>
-        <button class="testimonial-next shrink-0 text-white/60 hover:text-white transition-colors" aria-label="Next testimonial">
+        <button class="testimonial-next shrink-0 text-cream/40 hover:text-gold transition-colors" aria-label="Next testimonial">
           <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
         </button>
       </div>
@@ -160,7 +172,7 @@ const testimonials = [
           <button
             class:list={[
               "testimonial-dot w-2.5 h-2.5 rounded-full transition-colors duration-300",
-              i === 0 ? "bg-white" : "bg-white/40",
+              i === 0 ? "bg-gold" : "bg-cream/20",
             ]}
             data-index={i}
             role="tab"
@@ -207,12 +219,12 @@ const testimonials = [
 
       slides[prev].classList.add("opacity-0", "pointer-events-none");
       slides[prev].classList.remove("opacity-100");
-      dots[prev].classList.replace("bg-white", "bg-white/40");
+      dots[prev].classList.replace("bg-gold", "bg-cream/20");
       dots[prev].setAttribute("aria-selected", "false");
 
       slides[current].classList.remove("opacity-0", "pointer-events-none");
       slides[current].classList.add("opacity-100");
-      dots[current].classList.replace("bg-white/40", "bg-white");
+      dots[current].classList.replace("bg-cream/20", "bg-gold");
       dots[current].setAttribute("aria-selected", "true");
     }
 
@@ -261,19 +273,19 @@ const testimonials = [
   </script>
 
   <!-- Clients -->
-  <section class="py-12 md:py-16 overflow-hidden bg-gray-50">
-    <p class="text-center text-sm uppercase tracking-widest text-gray-400 mb-10">Trusted By</p>
+  <section class="py-12 md:py-16 overflow-hidden bg-ink">
+    <p class="text-center text-sm uppercase tracking-[0.2em] text-cream/40 mb-10">Trusted By</p>
     <div class="logo-marquee relative">
       <div class="logo-track flex items-center gap-16">
-        <img src="/images/carousel/bbc.png" alt="BBC" class="h-10 md:h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-        <img src="/images/carousel/sky.png" alt="Sky" class="h-10 md:h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-        <img src="/images/carousel/warner-bros.jpg" alt="Warner Bros. Pictures" class="h-10 md:h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-        <img src="/images/carousel/harry-potter-cursed-child.png" alt="Harry Potter and the Cursed Child" class="h-10 md:h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-        <img src="/images/carousel/royal-exchange-theatre.jpg" alt="Royal Exchange Theatre" class="h-10 md:h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-        <img src="/images/carousel/leeds-playhouse.jpg" alt="Leeds Playhouse" class="h-10 md:h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-        <img src="/images/carousel/tedx.png" alt="TEDx" class="h-10 md:h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-        <img src="/images/carousel/young-artist-academy.jpg" alt="Young Artist Academy" class="h-10 md:h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-        <img src="/images/carousel/netflix.png" alt="Netflix" class="h-10 md:h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+        <img src="/images/carousel/bbc.png" alt="BBC" class="h-10 md:h-12 w-auto object-contain grayscale invert mix-blend-screen opacity-60 hover:opacity-100 transition-all duration-300" />
+        <img src="/images/carousel/sky.png" alt="Sky" class="h-10 md:h-12 w-auto object-contain grayscale invert mix-blend-screen opacity-60 hover:opacity-100 transition-all duration-300" />
+        <img src="/images/carousel/warner-bros.jpg" alt="Warner Bros. Pictures" class="h-10 md:h-12 w-auto object-contain grayscale invert mix-blend-screen opacity-60 hover:opacity-100 transition-all duration-300" />
+        <img src="/images/carousel/harry-potter-cursed-child.png" alt="Harry Potter and the Cursed Child" class="h-10 md:h-12 w-auto object-contain grayscale invert mix-blend-screen opacity-60 hover:opacity-100 transition-all duration-300" />
+        <img src="/images/carousel/royal-exchange-theatre.jpg" alt="Royal Exchange Theatre" class="h-10 md:h-12 w-auto object-contain grayscale invert mix-blend-screen opacity-60 hover:opacity-100 transition-all duration-300" />
+        <img src="/images/carousel/leeds-playhouse.jpg" alt="Leeds Playhouse" class="h-10 md:h-12 w-auto object-contain grayscale invert mix-blend-screen opacity-60 hover:opacity-100 transition-all duration-300" />
+        <img src="/images/carousel/tedx.png" alt="TEDx" class="h-10 md:h-12 w-auto object-contain grayscale invert mix-blend-screen opacity-60 hover:opacity-100 transition-all duration-300" />
+        <img src="/images/carousel/young-artist-academy.jpg" alt="Young Artist Academy" class="h-10 md:h-12 w-auto object-contain grayscale invert mix-blend-screen opacity-60 hover:opacity-100 transition-all duration-300" />
+        <img src="/images/carousel/netflix.png" alt="Netflix" class="h-10 md:h-12 w-auto object-contain grayscale invert mix-blend-screen opacity-60 hover:opacity-100 transition-all duration-300" />
       </div>
     </div>
   </section>
@@ -308,17 +320,19 @@ const testimonials = [
     }
   </script>
 
-  <!-- Contact -->
-  <section class="max-w-3xl mx-auto px-6 py-16 md:py-20 text-center">
-    <h2 class="font-heading text-3xl font-bold mb-4">Get in Touch</h2>
-    <p class="text-gray-600 mb-8">
-      Interested in coaching or the accent training programme? Send a message or book a session.
-    </p>
-    <a
-      href="/contact/"
-      class="inline-block bg-teal text-white font-medium px-8 py-3 text-sm tracking-wide hover:bg-teal-dark transition-colors"
-    >
-      Contact Rosemary
-    </a>
+  <!-- Contact CTA -->
+  <section class="bg-stone">
+    <div class="max-w-3xl mx-auto px-6 py-16 md:py-20 text-center" data-animate="fade-up">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-ink mb-4">Get in Touch</h2>
+      <p class="text-body mb-8">
+        Interested in coaching or the accent training programme? Send a message or book a session.
+      </p>
+      <a
+        href="/contact/"
+        class="inline-block bg-gold text-ink font-medium px-8 py-3.5 text-sm tracking-wide hover:bg-gold-light transition-colors"
+      >
+        Contact Rosemary
+      </a>
+    </div>
   </section>
 </Base>
