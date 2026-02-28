@@ -6,10 +6,20 @@ import Footer from "../components/Footer.astro";
 interface Props {
   title: string;
   description?: string;
+  image?: string;
+  schema?: Record<string, unknown>;
 }
 
-const { title, description = "Voice, Accent and Dialect Coach. Specialising in accent and dialect work, Rosemary offers a 15-week accent programme for actors." } = Astro.props;
+const {
+  title,
+  description = "Voice, Accent and Dialect Coach. Specialising in accent and dialect work, Rosemary offers a 15-week accent programme for actors.",
+  image = "/images/rosemary-hero.jpg",
+  schema,
+} = Astro.props;
+
 const currentPath = Astro.url.pathname;
+const canonicalUrl = new URL(currentPath, Astro.site).href;
+const ogImageUrl = new URL(image, Astro.site).href;
 ---
 
 <!doctype html>
@@ -19,13 +29,31 @@ const currentPath = Astro.url.pathname;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalUrl} />
     <title>{title}</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Rosemary Berkon" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    {schema && (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    )}
   </head>
   <body class="font-body text-body antialiased bg-cream">
     <Nav currentPath={currentPath} />

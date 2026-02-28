@@ -86,11 +86,26 @@ const faqs = [
         a: "Due to limited places and small group sizes, refunds are handled in line with the programme's Terms & Conditions. Full details can be found on the Terms & Conditions page.",
     },
 ];
+
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(({ q, a }) => ({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: a,
+        },
+    })),
+};
 ---
 
 <Base
     title="Accent Training | Rosemary Berkon"
     description="15-week Actor-Centred Accent Training Programme. Modules in General American, Received Pronunciation, and Acting in Accent."
+    schema={faqSchema}
 >
     <!-- Testimonials -->
     <section class="bg-cream py-14">
@@ -107,6 +122,8 @@ const faqs = [
                                 <img
                                     src={image}
                                     alt={name}
+                                    width="1200"
+                                    height="1200"
                                     class="w-14 h-14 rounded-full object-cover ring-2 ring-gold/20"
                                 />
                                 <div>
