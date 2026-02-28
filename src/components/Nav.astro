@@ -14,15 +14,15 @@ const links = [
 ];
 ---
 
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+<header id="site-header" class="sticky top-0 z-50 bg-ink/95 backdrop-blur-sm border-b border-white/5 transition-shadow duration-300">
   <nav class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="/" class="font-heading text-lg font-bold tracking-wide text-teal-dark">
+    <a href="/" class="font-heading text-xl font-bold tracking-wide text-cream">
       Rosemary Berkon
     </a>
 
     <button
       id="mobile-menu-btn"
-      class="md:hidden p-2 text-gray-600"
+      class="md:hidden p-2 text-cream/70"
       aria-label="Toggle menu"
       aria-expanded="false"
     >
@@ -40,8 +40,8 @@ const links = [
             class:list={[
               "text-sm tracking-wide transition-colors",
               currentPath === href
-                ? "text-teal font-medium"
-                : "text-gray-600 hover:text-teal",
+                ? "text-gold font-medium"
+                : "text-cream/70 hover:text-gold-light",
             ]}
           >
             {label}
@@ -51,16 +51,16 @@ const links = [
     </ul>
   </nav>
 
-  <ul id="mobile-nav" class="hidden md:hidden px-6 pb-4 space-y-3">
+  <ul id="mobile-nav" class="hidden md:hidden px-6 pb-4 space-y-3 border-t border-white/5">
     {links.map(({ href, label }) => (
-      <li>
+      <li class:list={[links.indexOf({ href, label }) === 0 ? "pt-4" : ""]}>
         <a
           href={href}
           class:list={[
             "block text-sm tracking-wide",
             currentPath === href
-              ? "text-teal font-medium"
-              : "text-gray-600",
+              ? "text-gold font-medium"
+              : "text-cream/70",
           ]}
         >
           {label}
@@ -83,4 +83,13 @@ const links = [
     openIcon?.classList.toggle("hidden");
     closeIcon?.classList.toggle("hidden");
   });
+
+  const header = document.getElementById("site-header");
+  let lastScroll = 0;
+  window.addEventListener("scroll", () => {
+    const scrolled = window.scrollY > 20;
+    header?.classList.toggle("shadow-lg", scrolled);
+    header?.classList.toggle("shadow-gold/5", scrolled);
+    lastScroll = window.scrollY;
+  }, { passive: true });
 </script>
