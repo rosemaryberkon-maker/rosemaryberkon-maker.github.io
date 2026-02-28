@@ -1,0 +1,69 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="Contact | Rosemary Berkon" description="Get in touch with Rosemary Berkon or book a session.">
+  <section class="max-w-2xl mx-auto px-6 py-16 md:py-20">
+    <h1 class="font-heading text-4xl font-bold mb-4">Get in Touch</h1>
+    <p class="text-gray-600 mb-10">Send Rosemary a message or book a session directly.</p>
+
+    <!-- Replace xreadwvk with Formspree form ID e.g. xrgvabnk -->
+    <form action="https://formspree.io/f/xreadwvk" method="POST" class="space-y-5">
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          class="w-full border border-gray-300 px-4 py-2.5 text-sm focus:outline-none focus:border-teal transition-colors"
+        />
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          class="w-full border border-gray-300 px-4 py-2.5 text-sm focus:outline-none focus:border-teal transition-colors"
+        />
+      </div>
+      <div>
+        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          required
+          class="w-full border border-gray-300 px-4 py-2.5 text-sm focus:outline-none focus:border-teal transition-colors resize-vertical"
+        ></textarea>
+      </div>
+      <div class="flex items-start gap-3">
+        <input
+          type="checkbox"
+          id="newsletter"
+          name="newsletter"
+          value="yes"
+          class="mt-0.5 w-4 h-4 border-gray-300 text-teal focus:ring-teal"
+        />
+        <label for="newsletter" class="text-sm text-gray-600">I'd like to receive occasional updates and news from Rosemary.</label>
+      </div>
+      <button
+        type="submit"
+        class="inline-block bg-teal text-white font-medium px-8 py-3 text-sm tracking-wide hover:bg-teal-dark transition-colors"
+      >
+        Send Message
+      </button>
+    </form>
+  </section>
+
+  <section class="border-t border-gray-200">
+    <div class="max-w-3xl mx-auto px-6 py-16 md:py-20">
+      <h2 class="font-heading text-3xl font-bold mb-4 text-center">Book a Session</h2>
+      <p class="text-gray-600 mb-10 text-center">Schedule a 30-minute session with Rosemary.</p>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/rosemary-berkon/30min?hide_gdpr_banner=1" style="min-width:280px;height:1000px;overflow:hidden;"></div>
+      <script is:inline src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+  </section>
+</Base>
