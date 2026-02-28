@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140">
+  <!-- Gold ring -->
+  <circle cx="70" cy="70" r="67" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.6"/>
+  <!-- Background circle -->
+  <circle cx="70" cy="70" r="58" fill="#1a1a2e"/>
+  <!-- Monogram -->
+  <text x="70" y="67" text-anchor="middle" dominant-baseline="central" font-family="'Cormorant Garamond', Georgia, serif" font-size="44" font-weight="600" letter-spacing="3" fill="#c9a84c">RB</text>
+  <!-- Tagline -->
+  <text x="70" y="92" text-anchor="middle" font-family="'DM Sans', system-ui, sans-serif" font-size="6" letter-spacing="3" fill="#c9a84c" opacity="0.5">VOICE &amp; DIALECT</text>
+</svg>
