@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /thank-you/
+Disallow: /brand/
+
+Sitemap: https://rosemaryberkon-maker.github.io/sitemap-index.xml
