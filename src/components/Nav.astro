@@ -1,0 +1,85 @@
+---
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/about/", label: "About Me" },
+  { href: "/accent-training/", label: "Accent Training" },
+  { href: "/news/", label: "News" },
+];
+---
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+  <nav class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="font-heading text-lg font-bold tracking-wide text-teal-dark">
+      Rosemary Berkon
+    </a>
+
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 text-gray-600"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path class="menu-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        <path class="menu-close hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <ul id="nav-links" class="hidden md:flex items-center gap-8">
+      {links.map(({ href, label }) => (
+        <li>
+          <a
+            href={href}
+            class:list={[
+              "text-sm tracking-wide transition-colors",
+              currentPath === href
+                ? "text-teal font-medium"
+                : "text-gray-600 hover:text-teal",
+            ]}
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <ul id="mobile-nav" class="hidden md:hidden px-6 pb-4 space-y-3">
+    {links.map(({ href, label }) => (
+      <li>
+        <a
+          href={href}
+          class:list={[
+            "block text-sm tracking-wide",
+            currentPath === href
+              ? "text-teal font-medium"
+              : "text-gray-600",
+          ]}
+        >
+          {label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</header>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-nav");
+  const openIcon = btn?.querySelector(".menu-open");
+  const closeIcon = btn?.querySelector(".menu-close");
+
+  btn?.addEventListener("click", () => {
+    const expanded = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", String(!expanded));
+    menu?.classList.toggle("hidden");
+    openIcon?.classList.toggle("hidden");
+    closeIcon?.classList.toggle("hidden");
+  });
+</script>

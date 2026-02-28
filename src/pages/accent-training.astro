@@ -1,0 +1,252 @@
+---
+import Base from "../layouts/Base.astro";
+
+const testimonials = [
+  {
+    quote: "The learning environment is encouraging and low pressure, making it a comfortable place.",
+    name: "Vy Nguyen",
+    credit: "United Agents, Wuthering Heights (Emerald Fennell)",
+    image: "/images/vy-nguyen.jpg",
+  },
+  {
+    quote: "Rosemary provides a safe space to allow us to explore the accent in a physical and playful way. I trust her with my voice work.",
+    name: "Alanah Bloor",
+    credit: "United Agents, Sandokan, Man vs Baby (Netflix)",
+    image: "/images/alanah-bloor.jpg",
+  },
+  {
+    quote: "Incredible. The advice given is very clear and specific to what you need.",
+    name: "Neil Ashton",
+    credit: "Brassic (Sky), It's a Sin (BBC)",
+    image: "/images/neil-ashton.jpg",
+  },
+];
+
+const pricing = [
+  {
+    label: "One Module",
+    price: "239",
+    description: "Focused training in a single accent",
+    href: "#",
+  },
+  {
+    label: "Two Modules",
+    price: "449",
+    description: "For actors building a broader professional toolkit",
+    href: "#",
+    featured: true,
+  },
+  {
+    label: "All Three Modules",
+    price: "649",
+    description: "Comprehensive training for maximum versatility",
+    href: "#",
+  },
+];
+
+const faqs = [
+  {
+    q: "Who is this course for?",
+    a: "This programme is designed for actors at all stages who want to strengthen their accent technique, deepen their connection to their voice, and integrate accent work into performance. It's particularly suited to actors preparing for self-tapes, auditions, or roles requiring accent flexibility.",
+  },
+  {
+    q: "Do I need previous accent training?",
+    a: "No. The course is structured to support a range of experience levels. Each module builds clear foundations while offering depth for actors who have trained before.",
+  },
+  {
+    q: "How is the course delivered?",
+    a: "Sessions are delivered live online in small groups. All sessions are recorded and made available to participants if you're unable to attend live.",
+  },
+  {
+    q: "What makes this course different?",
+    a: "This programme treats accent work as part of performance — not something separate or \"put on\". Training draws from vocal anatomy, embodied voice work, social and cultural awareness, and practical performance application. Community and shared learning are central to the process.",
+  },
+  {
+    q: "Can I take just one module?",
+    a: "Yes. You can book one module, two modules, or the full programme. Each module runs for 5 weeks and stands alone, while also connecting to the wider training.",
+  },
+  {
+    q: "How much time should I commit each week?",
+    a: "You can expect one live 1.5-hour session per week, plus independent practice between sessions (around 2 hours a week for daily exercises and script preparation). The course is designed to fit around professional and training commitments.",
+  },
+  {
+    q: "Is there personalised feedback?",
+    a: "Yes. Each participant receives tailored feedback within the group setting, alongside structured exercises to support individual progress, as well as detailed feedback on each module's final submitted self-tape.",
+  },
+  {
+    q: "Is there a community space for participants?",
+    a: "Yes. An optional WhatsApp group will be offered to each cohort as a space to connect with fellow participants, share reflections or resources, and build a sense of community between sessions.",
+  },
+  {
+    q: "Do you offer student or early bird pricing?",
+    a: "Yes. A limited number of student and early bird places are available for each cohort at a reduced rate. These are offered on a first-come basis and are subject to eligibility. See the Terms & Conditions for details.",
+  },
+  {
+    q: "What is the refund policy?",
+    a: "Due to limited places and small group sizes, refunds are handled in line with the programme's Terms & Conditions. Full details can be found on the Terms & Conditions page.",
+  },
+];
+---
+
+<Base title="Accent Training | Rosemary Berkon" description="15-week Actor-Centred Accent Training Programme. Modules in General American, Received Pronunciation, and Acting in Accent.">
+  <!-- Testimonials -->
+  <section class="bg-warm-gray py-12">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-8">
+        {testimonials.map(({ quote, name, credit, image }) => (
+          <div class="text-center">
+            <img
+              src={image}
+              alt={name}
+              class="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
+            />
+            <blockquote class="text-gray-700 italic text-sm leading-relaxed">
+              &ldquo;{quote}&rdquo;
+            </blockquote>
+            <p class="mt-3 font-medium text-sm">{name}</p>
+            <p class="text-xs text-gray-500">{credit}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Programme Overview -->
+  <section class="max-w-3xl mx-auto px-6 py-16 md:py-20">
+    <h1 class="font-heading text-3xl md:text-4xl font-bold text-center mb-4">
+      Actor-Centred Training in Accents
+    </h1>
+    <p class="text-center text-teal font-medium mb-10">
+      15-Week Accent Training Programme for Actors
+    </p>
+
+    <div class="space-y-5 text-gray-700 leading-relaxed">
+      <p>
+        This three-module online training programme is designed for actors who want to expand their professional toolkit, strengthen their vocal versatility, and feel fully prepared for self-tapes, auditions, and roles requiring accent work.
+      </p>
+      <p>Each module combines structured learning, practical drills, and personalised feedback. You'll work at your own pace from wherever you are in the world, with direct, tailored coaching from Rosemary.</p>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      <div class="bg-warm-gray p-6 rounded">
+        <p class="text-xs uppercase tracking-widest text-teal mb-2">Module One</p>
+        <h3 class="font-heading text-lg font-bold">General American</h3>
+        <p class="text-sm text-gray-500 mt-2">Tuesdays, 3 Mar &ndash; 31 Mar</p>
+        <p class="text-sm text-gray-500">7:00 &ndash; 8:30pm</p>
+      </div>
+      <div class="bg-warm-gray p-6 rounded">
+        <p class="text-xs uppercase tracking-widest text-teal mb-2">Module Two</p>
+        <h3 class="font-heading text-lg font-bold">Received Pronunciation</h3>
+        <p class="text-sm text-gray-500 mt-2">Tuesdays, 14 Apr &ndash; 12 May</p>
+        <p class="text-sm text-gray-500">7:00 &ndash; 8:30pm</p>
+      </div>
+      <div class="bg-warm-gray p-6 rounded">
+        <p class="text-xs uppercase tracking-widest text-teal mb-2">Module Three</p>
+        <h3 class="font-heading text-lg font-bold">Acting in Accent</h3>
+        <p class="text-sm text-gray-500 mt-2">Tuesdays, 26 May &ndash; 23 Jun</p>
+        <p class="text-sm text-gray-500">7:00 &ndash; 8:30pm</p>
+      </div>
+    </div>
+
+    <h2 class="font-heading text-2xl font-bold mt-14 mb-4">Each Module Covers</h2>
+    <ul class="space-y-2 text-gray-700">
+      <li>Week One &mdash; Oral posture of the accent</li>
+      <li>Week Two &mdash; Key vowel changes</li>
+      <li>Week Three &mdash; Key consonant changes</li>
+      <li>Week Four &mdash; Rhythm of the accent</li>
+      <li>Week Five &mdash; Connection to intention</li>
+    </ul>
+    <p class="text-gray-600 mt-4 text-sm">
+      You will submit a self-tape recording of your monologue 'in accent' and receive personalised, individual feedback with future goals from Rosemary.
+    </p>
+    <p class="text-gray-600 mt-3 text-sm">
+      Module Three builds on the foundations laid in Modules One and Two with your own choice of accent. You'll have the chance to apply your new skills to deep-dive into character and context to create a truthful, grounded performance.
+    </p>
+  </section>
+
+  <!-- What You Get -->
+  <section class="bg-warm-gray py-16">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-heading text-2xl font-bold mb-6">What You'll Get Throughout the Programme</h2>
+      <ul class="space-y-3 text-gray-700">
+        <li class="flex gap-3"><span class="text-teal shrink-0">&#10003;</span> Weekly online lessons and resources</li>
+        <li class="flex gap-3"><span class="text-teal shrink-0">&#10003;</span> Practical drills you can repeat and return to</li>
+        <li class="flex gap-3"><span class="text-teal shrink-0">&#10003;</span> Acting-based application (not just sound changes)</li>
+        <li class="flex gap-3"><span class="text-teal shrink-0">&#10003;</span> Two-way feedback throughout the course</li>
+        <li class="flex gap-3"><span class="text-teal shrink-0">&#10003;</span> A final assessed self-tape for every module</li>
+        <li class="flex gap-3"><span class="text-teal shrink-0">&#10003;</span> Professional, warm, supportive coaching designed for actors</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="max-w-4xl mx-auto px-6 py-16 md:py-20">
+    <h2 class="font-heading text-2xl font-bold text-center mb-2">Investment</h2>
+    <p class="text-center text-gray-500 text-sm mb-10">2026 Introductory Rates</p>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {pricing.map(({ label, price, description, href, featured }) => (
+        <div class:list={[
+          "rounded p-8 text-center flex flex-col",
+          featured ? "bg-teal text-white shadow-lg ring-2 ring-teal" : "bg-warm-gray",
+        ]}>
+          <p class="text-sm font-medium tracking-wide uppercase">{label}</p>
+          <p class="mt-4">
+            <span class="text-4xl font-bold">&pound;{price}</span>
+          </p>
+          <p class:list={["mt-3 text-sm", featured ? "text-white/80" : "text-gray-500"]}>
+            {description}
+          </p>
+          <div class="mt-auto pt-6">
+            <a
+              href={href}
+              class:list={[
+                "inline-block w-full py-3 text-sm font-medium tracking-wide transition-colors",
+                featured
+                  ? "bg-white text-teal hover:bg-white/90"
+                  : "bg-teal text-white hover:bg-teal-dark",
+              ]}
+            >
+              Buy Now
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-center text-gray-500 text-sm mt-8">
+      These rates are offered for the 2026 launch cohort only. A limited number of early bird/student prices are available &mdash; see <a href="/terms/" class="text-teal underline">Terms &amp; Conditions</a>.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-warm-gray py-16">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-heading text-2xl font-bold mb-8">FAQs</h2>
+      <div class="space-y-4">
+        {faqs.map(({ q, a }) => (
+          <details class="group bg-white rounded p-5">
+            <summary class="cursor-pointer font-medium text-gray-800 flex justify-between items-center">
+              {q}
+              <svg class="w-5 h-5 text-gray-400 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p class="mt-3 text-gray-600 text-sm leading-relaxed">{a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 1:1 Coaching -->
+  <section class="max-w-3xl mx-auto px-6 py-16 text-center">
+    <h2 class="font-heading text-2xl font-bold mb-3">1:1 Coaching Sessions</h2>
+    <p class="text-gray-600">
+      Due to high demand, 1:1 coaching is currently by invitation only.
+    </p>
+    <p class="text-gray-600 mt-2">
+      For enquiries, please email <a href="mailto:rosemary.berkon@gmail.com" class="text-teal underline">rosemary.berkon@gmail.com</a>
+    </p>
+  </section>
+</Base>
